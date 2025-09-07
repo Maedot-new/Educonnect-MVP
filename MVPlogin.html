@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDUCONNECT-login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+   body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #c8dce4;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+   }
+
+   /* Welcome section at top */
+   .welcome {
+    font-family: monospace;
+    text-align: center;
+    padding: 20px 0;
+   }
+   .s1 {
+    font-style: italic;
+    color:#8a8d84;
+   }
+   .img {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+   }
+
+   /* Center the email box */
+   .center-box {
+    flex: 1; /* takes all remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .sb {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 8px 15px;
+    width: 250px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+   }
+   .sb i {
+    color: #777;
+    margin-right: 8px;
+   }
+   .sb input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    flex: 1;
+    background: transparent;
+   }
+   .b{
+    background-color: rgb(40, 86, 214);
+    color: white;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 15px;
+    width: 90px;
+    height: 30px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+   }
+   button:hover {
+    background-color:white;
+    color: rgb(40, 86, 214)
+   }
+   button:active{
+    cursor: pointer;
+   }
+  </style>
+ </head>
+<body>
+  <!-- Top welcome -->
+  <div class="welcome">
+    <h1>Welcome to <span class="s1">Educonnect</span></h1>
+    <img src="EDU1.png" class="img">
+  </div>
+
+  <!-- Centered email input and the sign in button-->
+  <div class="center-box">
+    <div class="sb">
+      <i class="fas fa-envelope"></i>
+      <input type="email" id="emailInput" placeholder="example@email.com">
+    </div>
+    <button class="b" id="goBtn">Sign in</button>
+  </div>
+
+  <script>
+    const emailInput = document.getElementById("emailInput");
+    const goBtn = document.getElementById("goBtn");
+
+goBtn.addEventListener("click", function () {
+  const text = emailInput.value.trim();
+
+  if (text === "exam@email.com") {
+    // redirect only if the email matches
+    window.location.href = "MVP.html"; 
+  } else {
+    alert("There is no account like that!");
+  }
+});
+  </script>
+</body>

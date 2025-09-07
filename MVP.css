@@ -1,0 +1,156 @@
+body {
+ margin: 0;
+ font-family: 'Georgia', serif;
+ background-color: #c8dce4;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ height: 1000px;
+}
+.search-box {
+ display: flex;
+ align-items: center;
+ background: white;
+ border-radius: 29px;
+ padding: 5px 15px;
+ width: 402px;
+ height: 38px;
+ margin-top: 6px;
+}
+.search-box input {
+ border: none;
+ outline: none;
+ font-size: 14px;
+ flex: 1;
+ background: transparent;
+}
+.search-box i {
+ color: #777;
+ margin-right: 8px;
+}
+.search-box i:hover{
+ background-color: rgb(184, 184, 184);
+ cursor: pointer;
+}
+main{
+  display: flex;
+  justify-content: flex-start; /* content starts from the left */
+  align-items: flex-start;
+  gap: 20px; /* space between left card and main feed */
+  width: 98%;
+  height: 85%;
+  padding: 20px 10px;
+}
+.md {
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #77c0dd;
+  color: rgb(41, 41, 41);
+  border-radius: 61px;
+  height: 90px;
+  padding: 8px 24px;
+  text-align: center;
+ }
+ .right{
+  width: 30%;
+ }
+/* ===== Card & Profile Left Side ===== */
+.left{
+ width: 370px;
+ height: 300px;
+}
+.card {
+  background: #ffffff; /* you can switch to var(--card) if you keep variables */
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  position: relative;
+  margin-left: 5px;
+}
+
+.profile-header {
+  height: 64px;
+  background: linear-gradient(135deg, #0a66c2, #004182);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.profile-content {
+  padding: 16px;
+  margin-top: -32px; /* pulls avatar into header */
+}
+
+.avatar {
+  width: 68px;
+  height: 68px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ddd, #bbb);
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.inline-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.badge {
+  font-size: 12px;
+  background: #f4f6f8;
+  border: 1px solid #e5e7eb;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #0a66c2;
+  color: #fff;
+  border-color: #0a66c2;
+}
+
+.sep {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 12px 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.space {
+  flex: 1;
+}
+
+
+.footer {
+  display: flex;          /* enables flexbox layout */
+  justify-content: center; /* or space-between / flex-start / flex-end */
+  align-items: center;     /* vertically align icons */
+  padding: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
