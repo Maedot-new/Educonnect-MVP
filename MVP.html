@@ -3,6 +3,7 @@
 <head>
   <title> EDUCONNECT-newsfeed(homepage)</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="MVP.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -20,7 +21,7 @@
             <div class="profile-header"></div>
             <div class="profile-content">
             <img class="avatar" alt="Your avatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='68' height='68'><rect width='100%' height='100%' rx='34' fill='%23ddd'/><text x='50%' y='54%' text-anchor='middle' font-family='Arial' font-size='28' fill='%23999'>Y</text></svg>"/>
-            <h3 style="margin:10px 0 4px">Your Name</h3>
+            <h3 style="margin:10px 0 4px"><a href="MVPPROFILE">Your Name</a></h3>
             <div class="muted">Student • Web enthusiast</div>
             <div class="inline-badges">
                 <span class="badge">HTML</span>
@@ -45,18 +46,18 @@
     </aside>
         <!--right side-->
     <aside class="right">
-        <div>
-            notification
+        <div class="not-sign">
+            🔔NOTIFICATION
         </div>
     </aside>
     </main>
-    <div class="footer">
-        <div class="gc"><i class="fas fa-home"></i></div>
-        <div class="gc">👥</div>
-        <div class="gc"><i class="fas fa-plus"></i></div>
-        <div class="gc"><i class="fas fa-comment"></i></div>
-        <div class="gc"><i class="fas fa-graduation-cap"></i></div>
-    </div>
+    <footer>
+        <div><span class="gc"><i class="fas fa-home"></i></span></div>
+        <div><span  class="gc"><i class="fas fa-users"></i></span></div>
+        <button class="post"><i class="fas fa-plus"></i></button>
+        <div><span class="gc"><i class="fas fa-comment"></i></span></div>
+        <div><spa class="gc"><i class="fas fa-graduation-cap"></i></span></div>
+    </footer>
     <script src ="MVP.js"></script>
 </body>
 </html>

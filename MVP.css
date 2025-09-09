@@ -1,11 +1,13 @@
 body {
  margin: 0;
+ padding: 0;
  font-family: 'Georgia', serif;
  background-color: #c8dce4;
  display: flex;
  flex-direction: column;
  align-items: center;
- height: 1000px;
+ height: 100vh;
+ width:100vw;
 }
 .search-box {
  display: flex;
@@ -37,9 +39,10 @@ main{
   justify-content: flex-start; /* content starts from the left */
   align-items: flex-start;
   gap: 20px; /* space between left card and main feed */
-  width: 98%;
-  height: 85%;
   padding: 20px 10px;
+  margin-bottom: 50px;
+  height: 80%;
+  width: 98vw;
 }
 .md {
   width: 700px;
@@ -55,6 +58,7 @@ main{
  }
  .right{
   width: 30%;
+  text-align: center;
  }
 /* ===== Card & Profile Left Side ===== */
 .left{
@@ -108,13 +112,11 @@ main{
   padding: 4px 8px;
   border-radius: 999px;
 }
-
 .actions {
   display: flex;
   gap: 10px;
   margin-top: 14px;
 }
-
 .btn {
   padding: 10px 12px;
   border: 1px solid #e5e7eb;
@@ -122,35 +124,51 @@ main{
   background: #fff;
   cursor: pointer;
 }
-
 .btn.primary {
   background: #0a66c2;
   color: #fff;
   border-color: #0a66c2;
 }
-
 .sep {
   height: 1px;
   background: #e5e7eb;
   margin: 12px 0;
 }
-
 .row {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .space {
   flex: 1;
 }
 
+/*the notification side*/
+.not-sign{
+  font-family: sans-serif;
+  height: 40px;
+}
 
-.footer {
-  display: flex;          /* enables flexbox layout */
-  justify-content: center; /* or space-between / flex-start / flex-end */
-  align-items: center;     /* vertically align icons */
-  padding: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
+/*the footer*/
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 21px;
+  display: flex;
+  justify-content: center;
+}
+footer i, footer span {
+ font-size: 1.2em;
+}
+.gc{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.post{
+  margin-left: 50px;
+  margin-right: 50px;
+  border: none;
 }
