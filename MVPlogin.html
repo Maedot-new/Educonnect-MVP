@@ -1,115 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EDUCONNECT-login</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduConnect - Login / Signup</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-   body {
-    margin: 0;
-    font-family: 'Georgia', serif;
-    background-color: #c8dce4;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-   }
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background-color: #c8dce4;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-   /* Welcome section at top */
-   .welcome {
-    font-family: monospace;
-    text-align: center;
-    padding: 20px 0;
-   }
-   .s1 {
-    font-style: italic;
-    color:#8a8d84;
-   }
-   .img {
-    width: 50px;
-    height: 50px;
-    margin-top: 10px;
-   }
+    /* Main wrapper (two columns) */
+    .wrapper {
+      background: white;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      overflow: hidden;
+      max-width: 900px;
+      width: 100%;
+    }
 
-   /* Center the email box */
-   .center-box {
-    flex: 1; /* takes all remaining space */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   }
+    /* Left = form area */
+    .form-container {
+      flex: 1;
+      padding: 40px 50px;
+      text-align: center;
+    }
 
-   .sb {
-    display: flex;
-    align-items: center;
-    background: white;
-    border-radius: 20px;
-    padding: 8px 15px;
-    width: 250px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-   }
-   .sb i {
-    color: #777;
-    margin-right: 8px;
-   }
-   .sb input {
-    border: none;
-    outline: none;
-    font-size: 14px;
-    flex: 1;
-    background: transparent;
-   }
-   .b{
-    background-color: rgb(40, 86, 214);
-    color: white;
-    border: none;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    border-radius: 15px;
-    width: 90px;
-    height: 30px;
-    margin-top: 6px;
-    margin-bottom: 6px;
-   }
-   button:hover {
-    background-color:white;
-    color: rgb(40, 86, 214)
-   }
-   button:active{
-    cursor: pointer;
-   }
+    /* Right = logo area */
+    .logo-container {
+      flex: 1;
+      background: #f3f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+    .logo-container img {
+      max-width: 80%;
+      height: auto;
+    }
+
+    h1 {
+      font-family: monospace;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .sb {
+      display: flex;
+      align-items: center;
+      background: #f9f9f9;
+      border-radius: 20px;
+      padding: 8px 15px;
+      width: 100%;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+    .sb i {
+      color: #777;
+      margin-right: 8px;
+      font-size: 18px;
+    }
+    .sb input {
+      border: none;
+      outline: none;
+      font-size: 14px;
+      flex: 1;
+      background: transparent;
+    }
+
+    .b {
+      background-color: rgb(40, 86, 214);
+      color: white;
+      border: none;
+      font-size: 18px;
+      border-radius: 15px;
+      width: 100%;
+      height: 40px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+    .b:hover {
+      background-color: white;
+      color: rgb(40, 86, 214);
+      border: 1px solid rgb(40, 86, 214);
+    }
+
+    .bottom-text {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .link {
+      color: rgb(40, 86, 214);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* Hide signup by default */
+    #signupForm { display: none; }
+
+    /* Responsive: stack on small screens */
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+      }
+      .logo-container {
+        order: -1; /* put logo on top */
+        padding: 20px;
+      }
+    }
   </style>
- </head>
+</head>
 <body>
-  <!-- Top welcome -->
-  <div class="welcome">
-    <h1>Welcome to <span class="s1">Educonnect</span></h1>
-    <img src="EDU1.png" class="img">
-  </div>
+  <div class="wrapper">
+    <!-- LEFT: Forms -->
+    <div class="form-container">
+      <!-- LOGIN FORM -->
+      <div id="loginForm">
+        <h1>Login</h1>
+        <div class="sb">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="loginEmail" placeholder="Email Address" />
+        </div>
+        <div class="sb">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="loginPassword" placeholder="Password" />
+        </div>
+        <button class="b">Sign In</button>
+        <div class="bottom-text">
+          <input type="checkbox" checked> Remember me  
+          <a href="#">Forgot password?</a>
+        </div>
+        <div class="bottom-text">
+          Don’t have an account? <span class="link" onclick="toggleForm()">Sign up</span>
+        </div>
+      </div>
 
-  <!-- Centered email input and the sign in button-->
-  <div class="center-box">
-    <div class="sb">
-      <i class="fas fa-envelope"></i>
-      <input type="email" id="emailInput" placeholder="example@email.com">
+      <!-- SIGNUP FORM -->
+      <div id="signupForm">
+        <h1>Sign Up</h1>
+        <div class="sb">
+          <i class="fas fa-user"></i>
+          <input type="text" id="signupName" placeholder="Full Name" />
+        </div>
+        <div class="sb">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="signupEmail" placeholder="Email Address" />
+        </div>
+        <div class="sb">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="signupPassword" placeholder="Password" />
+        </div>
+        <div class="sb">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="signupConfirm" placeholder="Confirm Password" />
+        </div>
+        <button class="b">Create Account</button>
+        <div class="bottom-text">
+          Already have an account? <span class="link" onclick="toggleForm()">Login</span>
+        </div>
+      </div>
     </div>
-    <button class="b" id="goBtn">Sign in</button>
+
+    <!-- RIGHT: Logo -->
+    <div class="logo-container">
+      <img src="EDU2.png" alt="EduConnect Logo">
+    </div>
   </div>
 
-  <script>
-    const emailInput = document.getElementById("emailInput");
-    const goBtn = document.getElementById("goBtn");
+<script>
+  // Hardcoded login credentials
+  const validEmail = "exam@email.com";
+  const validPassword = "admin";
 
-goBtn.addEventListener("click", function () {
-  const text = emailInput.value.trim();
+  // Handle login button
+  document.querySelector("#loginForm .b").addEventListener("click", function () {
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
 
-  if (text === "exam@email.com") {
-    // redirect only if the email matches
-    window.location.href = "MVP.html"; 
-  } else {
-    alert("There is no account like that!");
+    if (email === validEmail && password === validPassword) {
+      // Redirect to profile/dashboard page
+      window.location.href = "MVP.html";
+    } else {
+      alert("Invalid email or password!");
+    }
+  });
+
+  // Handle signup button (optional - just demo)
+  document.querySelector("#signupForm .b").addEventListener("click", function () {
+    const name = document.getElementById("signupName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim();
+    const password = document.getElementById("signupPassword").value.trim();
+    const confirm = document.getElementById("signupConfirm").value.trim();
+
+    if (!name || !email || !password || !confirm) {
+      alert("Please fill all fields.");
+      return;
+    }
+    if (password !== confirm) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    // For now just simulate account creation
+    alert("Account created! You can now log in.");
+    toggleForm(); // Switch back to login form
+  });
+
+  // Switch between login and signup
+  function toggleForm() {
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+    if (loginForm.style.display === "none") {
+      loginForm.style.display = "block";
+      signupForm.style.display = "none";
+    } else {
+      loginForm.style.display = "none";
+      signupForm.style.display = "block";
+    }
   }
-});
-  </script>
+</script>
 </body>
+</html>

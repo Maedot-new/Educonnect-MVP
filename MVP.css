@@ -1,110 +1,73 @@
 body {
- margin: 0;
- padding: 0;
- font-family: 'Georgia', serif;
- background-color: #c8dce4;
- display: flex;
- flex-direction: column;
- align-items: center;
- height: 100vh;
- width:100vw;
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background-color: #c8dce4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 .search-box {
- display: flex;
- align-items: center;
- background: white;
- border-radius: 29px;
- padding: 5px 15px;
- width: 402px;
- height: 38px;
- margin-top: 6px;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 29px;
+  padding: 5px 15px;
+  width: 402px;
+  height: 38px;
+  margin-top: 6px;
 }
 .search-box input {
- border: none;
- outline: none;
- font-size: 14px;
- flex: 1;
- background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  flex: 1;
+  background: transparent;
 }
 .search-box i {
- color: #777;
- margin-right: 8px;
+  color: #777;
+  margin-right: 8px;
 }
-.search-box i:hover{
- background-color: rgb(184, 184, 184);
- cursor: pointer;
-}
-main{
+.search-box i:hover { background-color: rgb(184, 184, 184); cursor: pointer }
+
+main {
   display: flex;
-  justify-content: flex-start; /* content starts from the left */
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 20px; /* space between left card and main feed */
+  gap: 20px;
   padding: 20px 10px;
   margin-bottom: 50px;
   height: 80%;
   width: 98vw;
 }
-.md {
-  width: 700px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #77c0dd;
-  color: rgb(41, 41, 41);
-  border-radius: 61px;
-  height: 90px;
-  padding: 8px 24px;
-  text-align: center;
- }
- .right{
-  width: 30%;
-  text-align: center;
- }
+.right { width: 30%; text-align: center }
+
 /* ===== Card & Profile Left Side ===== */
-.left{
- width: 370px;
- height: 300px;
-}
+.left { width: 370px; height: 300px }
 .card {
-  background: #ffffff; /* you can switch to var(--card) if you keep variables */
+  background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,.08);
   position: relative;
   margin-left: 5px;
 }
-
 .profile-header {
   height: 64px;
   background: linear-gradient(135deg, #0a66c2, #004182);
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 }
-
-.profile-content {
-  padding: 16px;
-  margin-top: -32px; /* pulls avatar into header */
-}
-
+.profile-content { padding: 16px; margin-top: -32px }
 .avatar {
-  width: 68px;
-  height: 68px;
-  border: 3px solid #fff;
-  border-radius: 50%;
+  width: 68px; height: 68px;
+  border: 3px solid #fff; border-radius: 50%;
   background: linear-gradient(180deg, #ddd, #bbb);
 }
-
-.muted {
-  color: #6b7280;
-}
-
-.inline-badges {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
+.muted { color: #6b7280 }
+.inline-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px }
 .badge {
   font-size: 12px;
   background: #f4f6f8;
@@ -112,63 +75,51 @@ main{
   padding: 4px 8px;
   border-radius: 999px;
 }
-.actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 14px;
-}
+.actions { display: flex; gap: 10px; margin-top: 14px }
 .btn {
-  padding: 10px 12px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  background: #fff;
-  cursor: pointer;
+  padding: 10px 12px; border: 1px solid #e5e7eb;
+  border-radius: 10px; background: #fff; cursor: pointer;
 }
-.btn.primary {
-  background: #0a66c2;
-  color: #fff;
-  border-color: #0a66c2;
-}
-.sep {
-  height: 1px;
-  background: #e5e7eb;
-  margin: 12px 0;
-}
-.row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.space {
-  flex: 1;
-}
+.btn.primary { background: #0a66c2; color: #fff; border-color: #0a66c2 }
+.sep { height: 1px; background: #e5e7eb; margin: 12px 0 }
+.row { display: flex; align-items: center; gap: 10px }
+.space { flex: 1 }
 
-/*the notification side*/
-.not-sign{
-  font-family: sans-serif;
-  height: 40px;
-}
+/* Notification side */
+.not-sign { font-family: sans-serif; height: 40px }
 
-/*the footer*/
+/* Footer */
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
-  padding: 21px;
-  display: flex;
-  justify-content: center;
+  position: fixed; bottom: 0; width: 100%;
+  color: white; text-align: center; padding: 21px;
+  display: flex; justify-content: center;
 }
-footer i, footer span {
- font-size: 1.2em;
+footer i, footer span { font-size: 1.2em }
+.gc { margin-left: 50px; margin-right: 50px }
+.post-btn { /* renamed from .post to avoid conflict */
+  margin-left: 50px; margin-right: 50px;
+  border: none; padding: 14px;
 }
-.gc{
-  margin-left: 50px;
-  margin-right: 50px;
+
+/* Post card */
+.post {
+  padding: 14px; margin-bottom: 20px;
 }
-.post{
-  margin-left: 50px;
-  margin-right: 50px;
-  border: none;
+.post-head {
+  display: flex; gap: 10px; align-items: center;
 }
+.post-head .avatar {
+  width: 44px; height: 44px; border-radius: 50%; border: 2px solid #ffffff;
+}
+.post-body { margin-top: 10px; line-height: 1.55; font-size: 15px }
+.post-media {
+  margin-top: 12px; border-radius: 12px;
+  overflow: hidden; border: 1px solid #e5e7eb;
+}
+.post-media img { width: 100%; display: block }
+.post-actions { display: flex; gap: 8px; margin-top: 10px }
+.ghost {
+  padding: 8px 12px; border-radius: 10px;
+  border: 1px solid #e5e7eb; background: #fff; cursor: pointer;
+}
+.ghost:hover { background: #f4f6f8 }

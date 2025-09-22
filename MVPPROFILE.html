@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>User Profile — Responsive Demo</title>
+  <link rel="stylesheet" href="MVPPROFILE.css" />
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="topnav">
+    <div class="topnav-left">
+      <a href="#" class="brand" aria-label="Home">
+        <img src="EDU1.png" alt="Logo" class="brand-logo" />
+        <span class="brand-name">MyNetwork</span>
+      </a>
+    </div>
+
+    <div class="topnav-center">
+      <form class="search" role="search" aria-label="Search profile">
+        <input type="search" placeholder="Search people, schools, posts..." aria-label="Search" />
+        <button type="submit" aria-label="Submit search">🔍</button>
+      </form>
+    </div>
+
+    <div class="topnav-right">
+      <button class="icon-btn" id="notificationsBtn" aria-haspopup="true" aria-expanded="false">🔔</button>
+      <div class="dropdown" id="profileMenu">
+        <button class="icon-btn" id="profileBtn" aria-haspopup="true" aria-expanded="false" aria-label="Open profile menu">☰</button>
+        <ul class="dropdown-menu" aria-label="Profile menu">
+          <li><a href="#">View profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Sign out</a></li>
+        </ul>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">≡</button>
+    </div>
+  </header>
+
+  <!-- Mobile nav (revealed by toggle) -->
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="#">Home</a>
+    <a href="#">My Network</a>
+    <a href="#">Jobs</a>
+    <a href="#">Messages</a>
+  </nav>
+
+  <main class="container">
+    <!-- Profile area -->
+    <section class="profile-main">
+      <!-- Profile header -->
+      <article class="profile-header" aria-labelledby="profileName">
+        <div class="cover">
+          <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=60" alt="Cover photo" />
+        </div>
+
+        <div class="profile-meta">
+          <img class="avatar" src="PHOTO.jpg" alt="Profile photo" />
+          <div class="meta-text">
+            <h1 id="profileName">Maedot Melese</h1>
+            <p class="headline">ICT enthusiast • Web Developer • Debate club president hopeful</p>
+            <p class="location">Addis Ababa, Ethiopia • <a href="mailto:maedot@example.com">maedot@example.com</a></p>
+          </div>
+          <div class="meta-actions">
+            <button class="btn primary">Message</button>
+            <button class="btn outline" id="editProfileBtn">Edit</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Content columns: main content -->
+      <div class="content-grid">
+        <section class="card about" id="aboutSection">
+          <div class="card-header">
+            <h2>About</h2>
+            <div class="card-actions">
+              <button class="small-btn" data-action="edit" data-target="#aboutText">Edit</button>
+            </div>
+          </div>
+          <div class="card-body" id="aboutText" contenteditable="false" aria-live="polite">
+            <p>
+              Passionate about empowering others through education, knowledge sharing, and meaningful discussions that foster growth and learning.
+            </p>
+          </div>
+        </section>
+
+        <section class="card education" id="educationSection">
+          <div class="card-header">
+            <h2>Education</h2>
+            <div class="card-actions">
+              <button class="small-btn" data-action="edit" data-target="#educationBody">Edit</button>
+            </div>
+          </div>
+          <div class="card-body" id="educationBody" contenteditable="false">
+            <div class="edu-item">
+              <h3>BSc. Computer Science</h3>
+              <span class="edu-time">University of Addis Ababa • 2018 — 2022</span>
+              <p>Specialized in software development and human-computer interaction.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card skills" id="skillsSection">
+          <div class="card-header">
+            <h2>Skills</h2>
+            <div class="card-actions">
+              <button class="small-btn" id="addSkillBtn">+ Add</button>
+            </div>
+          </div>
+          <div class="card-body skill-body">
+            <ul class="skill-list" id="skillList">
+              <li class="skill">HTML</li>
+              <li class="skill">CSS (Flex/Grid)</li>
+              <li class="skill">JavaScript</li>
+              <li class="skill">Git</li>
+              <li class="skill">Public Speaking</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <section class="card people-may-know">
+        <div class="card-header"><h3>People You May Know</h3></div>
+        <div class="card-body">
+          <ul class="people-list">
+            <li>
+              <img src="https://via.placeholder.com/40" alt="" />
+              <div>
+                <strong>Selam T.</strong>
+                <small>Professor at Addis Ababa University</small>
+              </div>
+              <button class="small-btn">Connect</button>
+            </li>
+            <li>
+              <img src="https://via.placeholder.com/40" alt="" />
+              <div>
+                <strong>Alemu K.</strong>
+                <small>Learns at Berea</small>
+              </div>
+              <button class="small-btn">Connect</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="page-footer">
+    <p>&copy; <span id="year"></span> MyNetwork — Built with HTML/CSS/JS</p>
+  </footer>
+
+  <script src="MVPPROFILE.js"></script>
+</body>
+</html>
